@@ -1,0 +1,10 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+{__NOLAYOUT__}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {$p.url} -->
+<if condition="$p.url eq 'hwptype'"> <include file='hwptype' />
+<elseif condition="$p.url eq 'sfptype'"/><include file='sfptype' />
+<elseif condition="$p.url eq 'pptype'"/><include file='pptype' />
+<elseif condition="$p.url eq 'cptype'"/><include file='cptype' />
+<else /> 请选择问题类型
+</if>

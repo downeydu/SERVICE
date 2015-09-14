@@ -1,0 +1,182 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/home/distMission.css">
+<script type="text/javascript" src="__PUBLIC__/js/showSub.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/index/pptype.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){ 
+		$("#dist").addClass("bar"); 　　
+	}); 
+</script>
+
+<style type="text/css">
+	#p{
+		border:1px solid blue;
+	}
+
+
+</style>
+<title>{$title}</title>
+	<form name='form1' method='post' >
+	<div id='top'>
+		
+			<button onclick="return save(form1)">保存</button>
+			<button onclick="return issue(form1)">发布</button>
+	</div>
+	<div id='middle'>
+		<h1>资产分配服务请求</h1>
+		<table  class='it'>
+			<tr>
+				<td width='50%'>
+					农银人寿保险股份有限公司IT服务台
+				</td>
+				<td width='50%'>
+					当前时间:{$date} &nbsp <span id='txt'></span>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id='table'>
+		<table class='dist'>
+			<tr>
+				<td class='left'><span>姓&nbsp&nbsp名:</span></td>
+				<td class='right'>
+					<input name='name' type='text' />
+				</td>
+				<td class='left'><span>电&nbsp&nbsp话:</span></td>
+				<td class='right'>
+					<input name='phone' type='text' />
+
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在部门:</span></td>
+				<td class='right'>
+					<select name='dname' id='dept' onchange="showSub(this.value)">
+							<option value='none'>请选择部门</option>
+						<volist name="d" id="dept">
+							<option value='{$dept.deptno}'>{$dept.dname}</option>
+						</volist>
+					</select>
+
+				</td>
+				<td class='left'><span>手机:</span></td>
+				<td class='right'>
+					<input name='tp' type='text' />
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在处室:</span></td>
+				<td class='right' >
+					<div id='subd'>
+						
+					</div>
+				</td>
+				<td class='left'><span>问题类型:</span></td>
+				<td class='right'>
+					{$ptype}
+					<input type='hidden' name='ptype' value='{$ptype}' />
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>请求编号:</span></td>
+				<td class='right'>
+					{$applynum}
+					<input type='hidden' name='applynum' value='{$applynum}' />
+				</td>
+				
+				
+				<td class='left'><span>创建人:</span></td>
+				<td class='right'>
+					{$Think.session.name}
+					<input type='hidden' name='creator' value='{$Think.session.name}' />
+				</td>
+			</tr>
+			<tr>
+				
+				<td class='left'><span>分配给:</span></td>
+				<td class='right'>
+					<select name='distribute'>
+						<option value='none'>请选择分配人员</option>
+						<option value='所有人'>所有人</option>
+						<volist name='u' id='role'>
+							<option value='{$role.name}'>{$role.name}</option>
+						</volist>
+					</select>
+				</td>
+				<td class='left'><span>任务状态:</span></td>
+				<td class='right'>
+					创建中
+					<input type='hidden' name='status' value='创建中' />
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td class='left'><span>分配原因:</span></td>
+				<td class='right' colspan="3">
+					<select name='distreason'>
+						<option value='none'>选择资产分配类别</option>
+						<option>特许软硬件安装</option>
+						<option>员工入职分配办公用具</option>
+						<option>设备损坏更新</option>
+						<option>设备报废更新</option>
+
+
+						
+					</select>
+				</td>
+			
+				
+			</tr>
+			<tr style='height:50px'>
+				<td class='left' ><span>资产类别:</span></td>
+				<td  colspan="3">
+					<table style='border:none;width:85%;margin:0 0 0 10;'>
+						<tr style='border:none'>
+							<td style='border:none'><input type='checkbox' name='protype[]' value='台式机' />台式机</td>
+							<td style='border:none'><input type='checkbox' name='protype[]' value='笔记本电脑' />笔记本电脑</td>
+							<td style='border:none'><input type='checkbox' name='protype[]' value='座机' />座机</td>
+							<td style='border:none'><input type='checkbox' name='protype[]' value='IP话机' />IP话机</td>
+							<td style='border:none'></td>
+						</tr>
+						<tr>
+							<td style='border:none'><input type='checkbox' name='protype[]' value='安装授权软件' />安装授权软件</td>
+							<td style='border:none'><input type='checkbox' name='protype[]' value='配置办公环境' />配置办公环境</td>
+							<td style='border:none'><input type='checkbox' name='protype[]' value='打印机' />打印机</td>
+							<td style='border:none'><input type='checkbox' name='protype[]' value='扫描仪' />扫描仪</td>
+							<td style='border:none'><input type='checkbox' name='protype[]' value='投影仪' />投影仪</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+				<tr>
+				<td class='left'><span>型号/版本:</span></td>
+				<td class='right'>
+				
+				</td>
+				<td class='left'><span>SN/KEY:</span></td>
+				<td class='right'>
+				
+				</td>
+				
+			</tr>
+			<tr>
+				<td class='left'><span>解决时间:</span></td>
+				<td class='right'>
+				
+				</td>
+				<td class='left'><span>解决人:</span></td>
+				<td class='right'>
+				
+				</td>
+			</tr>
+			
+			
+			
+</table>
+</div>
+</form>
+
+
+
+
+

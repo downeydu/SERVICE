@@ -1,0 +1,42 @@
+{__NOLAYOUT__}
+<layout name='supportlayout' />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/support/index.css">
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#scenter').addClass('bar');
+	});
+</script>
+
+
+<div class='one'>
+
+<h2 class='mission'><span class='h2'>任务汇总</span></h2>
+<span class='pm'>[待接收任务]</span>
+	<ul class='sp'>
+		<li><span class='li'> 以往未完成任务<a class='sp' href="__ROOT__/Support/pMission">({$pmnum})</a></span></li>
+		<li><span class='li'>今日发布的任务<a class='sp' href="__ROOT__/Support/tMission">({$tmnum})</a></span></li>
+		<li><span class='li'>指定给您的任务<a class='sp' href="__ROOT__/Support/priMission">({$prmnum})</a></span></li>
+		<li><span class='li'>VIP任务<a class='sp' href="__ROOT__/Support/vipMission">({$vipmnum})</a></span></li>
+
+    </ul>
+
+  <span class='pm'>[接受的任务]</span>
+	<ul class='sp'>
+		<li><span class='li'>您接受的普通任务<a class='sp' href="__ROOT__/Support/priAMission">({$pamnum})</a></span></li>
+		<li><span class='li'>VIP任务<a class='sp' href="__ROOT__/Support/vipAMission">({$vipamnum})</a></span></li>
+
+    </ul>
+
+
+ <span class='pm'>[已完成任务]</span>
+	<ul class='sp'>
+		<li><span class='li'>您完成的普通任务<a class='sp' href="__ROOT__/Support/priJMission">({$pjmnum})</a></span></li>
+		<li><span class='li'>VIP任务<a class='sp' href="__ROOT__/Support/vipJMission">({$vipjmnum})</a></span></li>
+
+    </ul>
+
+</div>
+<div class='two'>
+<!-- <h2 class='notice'><span class='h2'>系统通知</span></h2> -->
+
+</div>

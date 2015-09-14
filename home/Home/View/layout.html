@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>{$title}</title>
+	<meta charset='utf-8' />
+	<meta name='creator' content='DuBin' />
+	<meta name='generater' content="ThinkPHP" />
+	<meta name='create_time' content="2015-04-02 00:21" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/service/header.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/service/leftnav.css">
+	<script type="text/javascript" src='__PUBLIC__/js/jquery-1.9.1.min.js'></script>
+	<script type="text/javascript" src='__PUBLIC__/js/index/clock.js'></script>
+
+	
+
+	<script type="text/javascript">
+		$(function(){
+		$(".subNav").click(function(){
+					$(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
+					$(this).toggleClass("currentDt").siblings(".subNav").removeClass("currentDt")
+					
+					// 修改数字控制速度， slideUp(500)控制卷起速度
+					$(this).next(".navContent").slideToggle(200).siblings(".navContent").slideUp(200);
+			})	
+		})
+
+		
+	</script>
+	<style type="text/css">
+		.subNavBox{width:99%;border:solid 1px #48D1CC;margin:100px auto;}
+		.subNav{border-bottom:solid 1px #48D1CC;cursor:pointer;font-weight:bold;font-size:14px;color:white;line-height:28px;padding-left:10px;background:url("__PUBLIC__/image/service/navbg.png");}
+		.subNav:hover{color:yellow;}
+		.currentDd{color:yellow}
+		/*.currentDt{background-image:url("__PUBLIC__/image/service/jiantou.jpg");}*/
+		.navContent{display: none;border-bottom:solid 1px #e5e3da;}
+		.navContent li a{display:block;width:100%;height:28px;text-align:center;font-size:14px;line-height:28px;color:#333}
+		.navContent li a:hover{color:#fff;background-color:#20B2AA;}
+	</style>
+	<script type="text/javascript">
+		function chheight(){
+			var width = document.body.clientWidth;
+			var height = document.body.clientHeight;
+			mleft = document.getElementById('blockmleft');
+			mright = document.getElementById('blockmright');
+			mleft.style.height=height-95;
+			mright.style.height=height-95;
+		}
+
+	</script>
+
+</head>
+<body onload="return chheight()">
+<!-- 	<div class='all'>
+ -->	<div class='header'>
+		<div class='hleft'>
+			<img src="__PUBLIC__/image/service/abc.png">
+		</div>
+		<div class='hmid'>
+			<span>农银人寿IT服务台系统</span>
+		</div>
+		<div class='hright'>
+			<table class='tab'>
+				<tr>
+					<td width='25%'>你好,{$Think.session.name}</td>
+					<td width='25%'><a class='head' href="#">[使用须知]</a></td>
+					<td width='25%'><a class='head' href="__ROOT__/Index/servicePhone">[返回首页]</a></td>
+					<td width='25%'><a class='head' href="{:U('/Home/Public/logout')}">[退出系统]</a></td>
+				</tr>
+				<tr>
+					<td colspan="2">版本号:V1.0</td>
+					<td colspan="2" >发布时间:2015-04-01</td>
+				</tr>
+			</table>
+		</div >
+			
+
+	</div>
+
+	<div class='mleft' id='blockmleft'>
+		<div class="subNavBox nav">
+			<div class="subNav">任务发布</div>
+			<ul class="navContent " id='dist'>
+					<li><a href="__ROOT__/Index/hwptype">硬件问题</a></li>
+					<li><a href="__ROOT__/Index/sfptype">软件问题</a></li>
+					<li><a href="__ROOT__/Index/pptype">资产分配</a></li>
+					<li><a href="__ROOT__/Index/cptype">会议支持</a></li>
+			</ul>
+			<div class="subNav ">任务中心</div>
+			<ul class="navContent "  id='sum'>
+					<li><a href="__ROOT__/Index/servicePhone">任务汇总</a></li>
+					<li><a href="__ROOT__/Index/sTrack">任务追踪</a></li>
+					<li><a href="__ROOT__/Index/hiMission">已发布任务</a></li>
+					<li><a href="__ROOT__/Index/haMission">已接受任务</a></li>
+					<li><a href="__ROOT__/Index/hfMission">已完成任务</a></li>
+			</ul>
+			<div class="subNav">任务统计</div>
+			<ul class="navContent" id='static'>
+					<li><a href="__ROOT__/Index/allStatic">问题类别</a></li>
+					<li><a href="__ROOT__/Index/sDname">按照部门</a></li>
+					<li><a href="__ROOT__/Index/sPerson">按执行人</a></li>
+					<li><a href="__ROOT__/Index/sWeek">本周任务</a></li>
+					<li><a href="__ROOT__/Index/sCustom">自定义</a></li>
+			</ul>
+			
+			<div class="subNav">关于系统</div>
+			<ul class="navContent" id='system'>
+					<!-- <li><a href="#">发布通知</a></li> -->
+					<li><a href="__ROOT__/Index/sysinfo">系统说明</a></li>
+					<li><a href="__ROOT__/Index/help">问题与帮助</a></li>
+			</ul>
+			
+<!-- 			<div class="subNav">xxxxx</div>
+			<ul class="navContent">
+					<li><a href="#"></a></li>
+					<li><a href="#">添加新闻</a></li>
+					<li><a href="#">新闻管理</a></li>
+					<li><a href="#">添加新闻</a></li>
+					<li><a href="#">新闻管理</a></li>
+			</ul>
+ -->		</div>
+	</div>
+	</div>
+	<div class='mright' id='blockmright'>
+
+		{__CONTENT__}
+
+	</div>
+	<div class='foot'>
+	<span>版权所有 Copyright ABC Life Insurance Co.,Ltd.All Rights Reserved</span>
+	</div>
+	</body>
+	
+	
+	</html>
+

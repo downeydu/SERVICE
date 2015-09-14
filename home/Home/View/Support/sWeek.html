@@ -1,0 +1,126 @@
+{__NOLAYOUT__}
+<layout name='supportlayout' />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index/allstatic.css">
+<script type="text/javascript">
+	function go(Form){
+		if(Form.applynum.value=="" || Form.applynum.value==null){
+			alert("请输入请求编号或者请求人名字");
+			Form.applynum.focus();
+			return false;
+		}
+		document.form1.action="__ROOT__/Support/sTSearch";
+		document.form1.submit();
+	}
+
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#static').addClass('bar');
+	});
+
+</script>
+<h2 class='topic'><span class='tp'>本周所有的任务</span></h2>
+<div class='search'>
+	<form action='#' method='post' class='alls' name='form1'>
+		<img class='flash' src="__PUBLIC__/image/index/refresh.png" onclick="location.reload();">
+		<span class='search'>搜索</span><input type='text' name='applynum' class='search' />
+		<button class='submit' onclick="return go(form1)">搜索</button>
+		<a href="#" class='prompt'>搜索提示</a>
+	</form>
+</div>
+<div class='itt'>
+	<table class='tab'>
+		<th width='12%'>请求编号</th>
+		<th width='8%'>状态</th>
+		<th width='20%'>来源</th>
+		<th width='12%'>问题类型</th>
+		<th width='10%'>执行人</th>
+		<th width='18%'>创建时间</th>
+		<th width='18%'>完成时间</th>
+			<volist name='week' id='week' >
+					<tr class='bo' onmouseover="this.style.background='#87CEFA'" onmouseout="this.style.background=''">
+					<php>
+						$applynum=$week['applynum'];
+						if($week['ptype']=='硬件问题')
+						{
+							if($week['step']=='finish'){
+								$url='hwfDisplay';
+							}else if($week['step']=='accept'){
+								$url='hwaDisplay';
+							}
+						}
+						else if($week['ptype']=='软件问题')
+						{
+							if($week['step']=='finish'){
+								$url='sffDisplay';
+							}else if($week['step']=='accept'){
+								$url='sfaDisplay';
+							}
+
+						}
+						else if($week['ptype']=='资产分配')
+						{
+							if($week['step']=='finish'){
+								$url='ppfDisplay';
+							}else if($week['step']=='accept'){
+								$url='ppaDisplay';
+							}
+
+						}
+						else if($week['ptype']=='会议支持')
+						{
+							if($week['step']=='finish'){
+								$url='cpfDisplay';
+							}else if($week['step']=='accept'){
+								$url='cpaDisplay';
+							}
+
+						}
+						
+
+					echo "<td><a href='__ROOT__/Support/$url/applynum/$applynum'>$applynum</a></td>"
+					</php>
+						<td>{$week.status}</td>
+						<td>{$week.dname}&nbsp{$week.name}</td>
+						<td>{$week.ptype}</td>
+						<td>{$week.solver}</td>
+						<td>{$week.ctime}</td>
+						<td>{$week.stime}</td>
+					</tr>
+				
+			</volist>
+				<tr >
+					<td colspan="7">{$page}</td>
+				</tr>
+	</table>
+	<table>
+		<tr>
+			<td width='12%'>未完成任务:</td>
+			<td width='6%'>{$unfn}个</td>
+			<td width='20%'></td>
+			<td width='12%'></td>
+			<td width='18%'></td>
+			<td width='18%'></td>
+			<td width='12%'></td>
+		</tr>
+		<tr>
+			<td>共完成任务:</td>
+			<td>{$fn}个</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>完成率:</td>
+			<td>{$rate}</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+
+	</table>
+</div>

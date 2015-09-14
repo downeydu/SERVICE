@@ -1,0 +1,46 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index/allstatic.css">
+<script type="text/javascript">
+	function go(Form){
+		if(Form.applynum.value=="" || Form.applynum.value==null){
+			alert("请输入请求编号或者请求人名字");
+			Form.applynum.focus();
+			return false;
+		}
+		document.form1.action="__ROOT__/Index/sTSearch";
+		document.form1.submit();
+	}
+
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#static').addClass('bar');
+	});
+
+</script>
+<h2 class='topic'><span class='tp'>按问题类别统计</span></h2>
+<div class='search'>
+	<form action='#' method='post' class='alls' name='form1'>
+		<img class='flash' src="__PUBLIC__/image/index/refresh.png" onclick="location.reload();">
+		<span class='search'>搜索</span><input type='text' name='applynum' class='search' />
+		<button class='submit' onclick="return go(form1)">搜索</button>
+		<a href="#" class='prompt'>搜索提示</a>
+	</form>
+</div>
+<div class='itt'>
+	<table class='tab'>
+		<th width='20%'>执行人</th>
+		<th width='20%'>接受数</th>
+		<th width='20%'>完成数</th>
+		<th width='20%'>接受率</th>
+		<th width='20%'>完成率</th>
+		<volist id='it' name='it'>
+			<tr onmouseover="this.style.background='#66CCFF' " onmouseout="this.style.background='white' ">
+				<td><a href="__ROOT__/Index/sPri/name/{$it['name']}">{$it['name']}</a></td>
+				<td>{$ar[$it['name']]['asum']}</td>
+				<td>{$ar[$it['name']]['fsum']}</td>
+				<td>{$ar[$it['name']]['arate']}</td>
+				<td>{$ar[$it['name']]['frate']}</td>
+			</tr>
+		</volist>
+	</table>
+</div>

@@ -1,0 +1,149 @@
+
+div.mright {
+	background-color:white;
+}
+
+div.mright div.ptop{
+	width:100%;
+	height:30px;
+	border:none;
+	padding:0 0 0 10;
+	background:url("/itservice/Public/image/index/bgh2.png");
+	margin:0 0 15 0;
+
+
+
+}
+.bar {
+	display:block;
+}
+div.ptop span{
+	line-height: 30px;
+	float:left;
+	font-weight: bolder;
+
+}
+
+ #pleft{
+	width:25%;
+	height:85%;
+	/*background-color:yellow;*/
+	float:left;
+	position: inherit;
+	text-align:center;
+	border-right: 1px dashed black;
+
+
+}
+
+ #pmid{
+	width:25%;
+	height:85%;
+	/*background-color:red;*/
+	float:left;
+	border-right: 1px dashed black;
+
+
+}
+
+ #pright{
+	width:25%;
+	height:85%;
+	/*background-color:#008080;*/
+	float:left;
+	border-right: 1px dashed black;
+
+}
+ #plast{
+	width:24.5%;
+	height:85%;
+	/*background-color:#ccc;*/
+	float:left;
+}
+ ul li a.sp{
+	font-size:13px;
+	text-decoration: none;
+	color:#666;
+	float:left;
+}
+ ul li a.sp:hover{
+	text-decoration:underline;
+	color:red;
+}
+
+ ul li em{
+	font-size:13px;
+	color:#ccc;
+	float:right;
+	font-style: normal;
+	font-family: Tahoma;
+}
+  ul.sp{
+	padding:0 0 0 10px;
+	float:left;
+	/*background-color:black;*/
+	width:95%;
+	list-style-type: none;
+
+}
+ ul.sp li{
+	height:18px;
+	line-height: 18px;
+	margin-bottom: 0px;
+	margin-top:0px;
+	list-style-type: none;
+	margin:0 0 0 0;
+}
+h2{
+	float:left;
+	margin:0 0 10 10;
+	font-weight: bolder;
+}
+
+ul li em{
+	font-size:13px;
+	color:#ccc;
+	float:right;
+	font-style: normal;
+	font-family: Tahoma;
+}
+
+span.li {
+	font-size:15px;
+	color:#666;
+	float:left;
+}
+
+
+ul.sp{
+	padding:0 0 0 10px;
+	float:left;
+	/*background-color:black;*/
+	width:95%;
+	list-style-type: none;
+
+}
+ ul.sp li{
+	height:18px;
+	line-height: 18px;
+	margin-bottom: 0px;
+	margin-top:0px;
+	list-style-type: none;
+	margin:0 0 5 0;
+}
+
+
+a:link {
+	text-decoration: none;
+	color:#008080;
+}
+a:visited {
+	text-decoration: none;
+	color:#008080;
+}
+
+a:hover {
+	text-decoration: none;
+	color:red;
+}
+

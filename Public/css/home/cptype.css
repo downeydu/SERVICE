@@ -1,0 +1,57 @@
+div.cp{
+	width:100%;
+	/*height:200px;*/
+	background:white;
+	border:2px solid #ccc;
+}
+
+
+div.cp table {
+	width:100%;
+	/*height:100%;*/
+	/*border:1px solid black;*/
+	border-collapse: collapse;
+}
+
+div.cp table tr{
+	height:25px;
+}
+
+div.cp table td{
+	border:1px solid #ccc;
+}
+div.cp table td.left{
+	width:10%;
+	text-align: center;
+	color:#0000CD;
+
+}
+
+div.cp table td.left span{
+	float:right;
+	margin-right: 10px;
+}
+
+div.cp table td.right {
+	width:40%;
+	padding:0 0 0 15px;
+}
+
+div.cp table td.big {
+	padding:0 0 0 15px;
+}
+
+div.cp table td.big input.pinfo{
+	width:90%;
+}
+
+
+table.it{
+	width:100%;
+	text-align:center;
+}
+
+table.it tr{
+	line-height:25px;
+}
+

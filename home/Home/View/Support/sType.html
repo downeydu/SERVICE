@@ -1,0 +1,80 @@
+{__NOLAYOUT__}
+<layout name='supportlayout' />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index/allstatic.css">
+<script type="text/javascript">
+	function go(Form){
+		if(Form.applynum.value=="" || Form.applynum.value==null){
+			alert("请输入请求编号或者请求人名字");
+			Form.applynum.focus();
+			return false;
+		}
+		document.form1.action="__ROOT__/Support/sTSearch";
+		document.form1.submit();
+	}
+
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#static').addClass('bar');
+	});
+
+</script>
+<h2 class='topic'><span class='tp'>按问题类别统计</span></h2>
+<div class='search'>
+	<form action='#' method='post' class='alls' name='form1'>
+		<img class='flash' src="__PUBLIC__/image/index/refresh.png" onclick="location.reload();">
+		<span class='search'>搜索</span><input type='text' name='applynum' class='search' />
+		<button class='submit' onclick="return go(form1)">搜索</button>
+		<a href="#" class='prompt'>搜索提示</a>
+	</form>
+</div>
+<div class='itt'>
+	<table class='tab'>
+		<th width='22%'>问题类别</th>
+		<th width='12%'>共发布</th>
+		<th width='12%'>已接受</th>
+		<th width='12%'>已完成</th>
+		<th width='12%'>接受率</th>
+		<th width='12%'>完成率</th>
+		<tr onmouseover="this.style.background='#87CEFA'" onmouseout="this.style.background='' ">
+			<td><a href="__ROOT__/Support/aSType/ptype/硬件问题">硬件支持</a></td>
+			<td>{$hwn}</td>
+			<td>{$hwan}</td>
+			<td>{$hwfn}</td>
+			<td>{$hwarate}</td>
+			<td>{$hwfrate}</td>
+		</tr>
+		<tr onmouseover="this.style.background='#87CEFA'" onmouseout="this.style.background='' ">
+			<td><a href="__ROOT__/Support/aSType/ptype/软件问题">软件支持</a></td>
+			<td>{$sfn}</td>
+			<td>{$sfan}</td>
+			<td>{$sffn}</td>
+			<td>{$sfarate}</td>
+			<td>{$sffrate}</td>
+		</tr>
+		<tr onmouseover="this.style.background='#87CEFA'" onmouseout="this.style.background='' ">
+			<td><a href="__ROOT__/Support/aSType/ptype/会议支持">会议支持</a></td>
+			<td>{$cpn}</td>
+			<td>{$cpan}</td>
+			<td>{$cpfn}</td>
+			<td>{$cparate}</td>
+			<td>{$cpfrate}</td>
+		</tr>
+		<tr onmouseover="this.style.background='#87CEFA'" onmouseout="this.style.background='' ">
+			<td><a href="__ROOT__/Support/aSType/ptype/资产分配">资产分配</a></td>
+			<td>{$ppn}</td>
+			<td>{$ppan}</td>
+			<td>{$ppfn}</td>
+			<td>{$pparate}</td>
+			<td>{$ppfrate}</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style='border-top:1px solid blue'>{$sum}</td>
+			<td style='border-top:1px solid blue'>{$asum}</td>
+			<td style='border-top:1px solid blue'>{$fsum}</td>
+			<td style='border-top:1px solid blue'>{$avarate}</td>
+			<td style='border-top:1px solid blue'>{$avfrate}</td>
+		</tr>
+	</table>
+</div>

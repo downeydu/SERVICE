@@ -1,0 +1,48 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index/allstatic.css">
+<script type="text/javascript">
+	function go(Form){
+		if(Form.applynum.value=="" || Form.applynum.value==null){
+			alert("请输入请求编号或者请求人名字");
+			Form.applynum.focus();
+			return false;
+		}
+		document.form1.action="__ROOT__/Support/sTSearch";
+		document.form1.submit();
+	}
+
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#static').addClass('bar');
+	});
+
+</script>
+<h2 class='topic'><span class='tp'>按照部门分类</span></h2>
+<div class='search'>
+	<form action='#' method='post' class='alls' name='form1'>
+		<img class='flash' src="__PUBLIC__/image/index/refresh.png" onclick="location.reload();">
+		<span class='search'>搜索</span><input type='text' name='applynum' class='search' />
+		<button class='submit' onclick="return go(form1)">搜索</button>
+		<a href="#" class='prompt'>搜索提示</a>
+	</form>
+</div>
+<div class='itt'>
+	<table class='tab'>
+		<th width='25%'>请求编号</th>
+		<th width='25%'>任务总数</th>
+<!-- 		<th width='25%'>接受率</th>
+		<th width='25%'>完成率</th>
+ -->			<volist name='dm' id='dm' >
+					<tr class='bo' onmouseover="this.style.background='#87CEFA'" onmouseout="this.style.background=''">
+						<td><a href="__ROOT__/Index/DDisplay/dname/{$dm['dname']}">{$dm['dname']}</a></td>
+						<td>{$dm['dnum']}</td>
+<!-- 						<td></td>
+						<td></td>
+ -->					</tr>
+				
+			</volist>
+				<tr >
+					<td colspan="7">{$page}</td>
+				</tr>
+	</table>
+</div>

@@ -1,0 +1,134 @@
+
+
+div.mright {
+    /*background:white;*/
+    /*border-left:1px solid black;*/
+}
+
+
+.u-main{
+    /*float: right;*/
+    margin-left: auto;
+    margin-right:auto;
+    width: 70%;
+    /*background:red;*/
+    /*margin:auto 0;*/
+}
+
+
+.u-tab-wrap{
+    height: 37px;
+    position: relative;
+}
+.u-tab-wrap .sub{
+    position: absolute;
+    right: 0;
+    top:10px;
+}
+
+/*//important */
+.u-tab{
+    height: 35px;
+    border-bottom: 2px solid #48D1CC;
+    /*border-bottom: 2px solid #FFFFFF;*/
+}
+.u-tab li{
+    /*background: url("../images/u_nav.jpg") no-repeat right -224px ;*/
+    background: #48D1CC ;
+    float: left;
+    height: 35px;
+    line-height: 37px;
+    text-align: center;
+    width: 115px;
+    margin-right: 5px;
+    font-size: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    /*background:blue;*/
+}
+.u-tab .current{
+    background:#20B2AA;
+    font-weight: bold;
+}
+.u-tab a{
+    color: #000000;
+}
+.u-tab .current a{
+    color: #fff;
+}
+.u-tab a:hover{
+    color: #c76001;
+    text-decoration: none;
+}
+.u-tab .current a:hover{
+    color: #fff;
+}
+/*外边框*/
+.u-form-wrap{
+    border: 2px solid #20B2AA;
+    border-top: none;
+    padding: 20px;
+    zoom: 1;
+}
+
+.uf-tips{
+    background: #AFEEEE;
+    border: 1px solid #48D1CC;
+    padding: 10px 20px;
+    text-align: left
+}
+
+.uf-tips ul li{
+    /*float:left;*/
+    margin:10 10 10 20;
+    /*float:left;*/
+    font-size:14px;
+    font-color:#DCDCDC;
+}
+
+/* m-form */
+.m-form-box{
+    border:1px solid #eee;
+    zoom:1;
+    overflow: hidden;
+}
+.m-form-til{
+    height: 31px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #eee;
+    padding:0 18px;
+    font-size: 14px;
+    line-height: 31px;
+    background: #ffefd1;
+}
+.m-form-con{
+    padding:20px 0 10px 0;
+}
+.m-sub-til{
+    height: 35px;
+    line-height: 35px;
+    padding: 0 18px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #979595;
+}
+
+.tab-search .i-item{
+    float: left;
+    width: 135px;
+}
+.tab-search .i-item-btn{
+    float: left;
+    width: 120px;
+    text-align: left;
+    height: 32px;
+}
+
+.u-form-wrap .list-raq{
+    background: #fafafa;
+    border-bottom: 1px solid #eee;
+    padding:0;
+    margin: 0;
+    height: 35px;
+    line-height: 35px;
+}

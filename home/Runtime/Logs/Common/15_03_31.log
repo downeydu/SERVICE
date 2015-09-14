@@ -1,0 +1,72 @@
+[ 2015-03-31T09:30:21+08:00 ] 10.0.100.175 /itservice/Public/fonts/glyphicons-halflings-regular.eot?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000193s ]
+ERR: 无法加载模块:Public
+
+[ 2015-03-31T09:35:07+08:00 ] 10.0.100.175 /itservice/Public/fonts/glyphicons-halflings-regular.eot?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000194s ]
+ERR: 无法加载模块:Public
+
+[ 2015-03-31T10:00:08+08:00 ] 10.0.100.175 /itservice/Public/fonts/glyphicons-halflings-regular.eot?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+ERR: 无法加载模块:Public
+
+[ 2015-03-31T10:01:57+08:00 ] 10.0.100.175 /itservice/Public/fonts/glyphicons-halflings-regular.eot?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000193s ]
+ERR: 无法加载模块:Public
+
+[ 2015-03-31T10:05:11+08:00 ] 10.0.100.175 /itservice/Public/fonts/glyphicons-halflings-regular.eot?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+ERR: 无法加载模块:Public
+
+[ 2015-03-31T10:15:14+08:00 ] 10.0.100.175 /itservice/Public/fonts/glyphicons-halflings-regular.eot?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+ERR: 无法加载模块:Public
+
+[ 2015-03-31T10:21:20+08:00 ] 10.0.100.80 /itservice/Public/fonts/glyphicons-halflings-regular.eot?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+ERR: 无法加载模块:Public
+
+[ 2015-03-31T10:23:27+08:00 ] 10.0.100.175 /itservice/Public/fonts/glyphicons-halflings-regular.eot?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000199s ]
+ERR: 无法加载模块:Public
+
+[ 2015-03-31T10:23:38+08:00 ] 10.0.100.175 /itservice/Index/a
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000193s ]
+ERR: 无法加载模块:Index
+
+[ 2015-03-31T10:23:43+08:00 ] 10.0.100.175 /itservice/Index/a.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+ERR: 无法加载模块:Index
+
+[ 2015-03-31T10:23:55+08:00 ] 10.0.100.175 /itservice/Public/fonts/glyphicons-halflings-regular.eot?
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000195s ]
+ERR: 无法加载模块:Public
+
+[ 2015-03-31T11:58:01+08:00 ] ::1 /itservice/index.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+ERR: 无法加载模块:Index
+

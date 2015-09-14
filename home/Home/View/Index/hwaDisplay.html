@@ -1,0 +1,195 @@
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/home/distMission.css">
+<script type="text/javascript" src="__PUBLIC__/js/support/hwaDisplay.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){ 
+		$("#sum").addClass("bar"); 　　
+	}); 
+</script>
+<script type="text/javascript">
+	function change(){
+		document.form1.action='__ROOT__/Index/fchange';
+		document.form1.submit();
+	}
+
+	function edit(){
+		document.form1.action='__ROOT__/Index/eMission';
+		document.form1.submit();
+	}
+
+
+
+
+</script>
+<style type="text/css">
+	input.treason {
+		width:80%;
+	}
+	input.method {
+		width:80%;
+	}
+
+	input.brand {
+		width:50%;
+	}
+
+</style>
+
+<title>{$title}</title>
+	<form name='form1' method='post' enctype="multipart/form-data">
+	<div id='top'>
+				<button onclick="edit()">编辑任务</button>
+				<button onclick="slist()">导出服务单</button>
+				<button onclick="change()">强制转交</button>
+	</div>
+
+		
+
+	<input type='hidden' name='ptype' value='{$row[0].ptype}' />
+	<input type='hidden' name='applynum' value='{$applynum}' />
+
+	<div id='middle'>
+		<h1>硬件服务请求</h1>
+		<table  class='it'>
+			<tr>
+				<td width='50%'>
+					农银人寿保险股份有限公司IT服务台
+				</td>
+				<td width='50%'>
+					创建时间:{$row[0].ctime}
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id='table'>
+		<table>
+			<tr>
+				<td class='left'><span>姓&nbsp&nbsp名:</span></td>
+				<td class='right'>
+					{$row[0].name}
+				</td>
+				<td class='left'><span>电&nbsp&nbsp话:</span></td>
+				<td class='right'>
+					{$row[0].phone}
+
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在部门:</span></td>
+				<td class='right'>
+							{$row[0].dname}
+
+				</td>
+				<td class='left'><span>手机:</span></td>
+				<td class='right'>
+					{$row[0].tp}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在处室:</span></td>
+				<td class='right' >
+					{$row[0].subdname}
+				</td>
+				<td class='left'><span>问题类型:</span></td>
+				<td class='right'>
+					{$row[0].ptype}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>请求编号:</span></td>
+				<td class='right'>
+					{$applynum}
+				</td>
+				
+				
+				<td class='left'><span>创建人:</span></td>
+				<td class='right'>
+					{$row[0].creator}
+				</td>
+			</tr>
+			<tr>
+				
+				<td class='left'><span>分配给:</span></td>
+				<td class='right'>
+					{$row[0].distribute}
+				</td>
+				<td class='left'><span>任务状态:</span></td>
+				<td class='right'>
+					{$row[0].status}
+				</td>
+			</tr>
+
+
+				<tr>
+				<td class='left'><span>硬件类别:</span></td>
+				<td class='right'>
+					{$row[0].hwtype}
+				</td>
+				<td class='left'><span>品牌型号:</span></td>
+				<td class='right'>
+					<!-- <input type='text' name='brand' class='brand' /> -->
+				</td>
+			</tr>
+				<tr>
+					<td class='left'><span>接受时间:</span></td>
+					<td class='right'>
+					{$row[0].atime}
+					</td>
+				<td class='left'><span>主机序列号:</span></td>
+				<td class='right'>
+					<!-- <input type='text' name='sn' /> -->
+				</td>
+				
+			</tr>
+			<tr>
+				<td class='left'><span>解决时间:</span></td>
+				<td class='right'>
+				
+				</td>
+				<td class='left'><span>解决人:</span></td>
+				<td class='right'>
+					<input type='hidden' name='presolver' value='{$row[0].solver}' />
+					<select name="solver">
+							<option value='{$row[0].solver}'>{$row[0].solver}</option>
+						<volist id='it' name='it'>
+							<option value="{$it.name}">{$it.name}</option>
+						</volist>
+
+					</select>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class='left'><span>故障描述:</span></td>
+				<td colspan="3" class='big'>
+				{$row[0].tinfo}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>故障原因:</span></td>
+				<td colspan="3" class='big'>
+					<!-- <input type='text' name='treason'  class='treason' /> -->
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>解决方法:</span></td>
+				<td colspan="3" class='big'>
+					<!-- <input type='text' name='method'  class='method' /> -->
+					
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>服务单上传:</span></td>
+				<td class='right' colspan="3">
+					<!-- <input type='file' name='sform' /> -->
+				</td>
+			</tr>
+</table>
+</div>
+</form>
+
+
+
+
+

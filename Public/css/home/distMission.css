@@ -1,0 +1,139 @@
+body,h1,h2,h3,form,p,ul,li,dl,dt,dd {
+	padding:0;
+	margin:0;
+
+}
+
+.bar {
+	display:block;
+}
+
+#top{
+	width:100%;
+	height:35px;
+	background-color:#ADD8E6;
+	padding:0 0 0 10px;
+
+}
+
+#top button{
+	/*background:red;*/
+	height:20px;
+	margin:10px;
+	float:left;
+}
+
+#middle{
+	height:90px;
+	width:100%;
+	border:1px solid #ccc;	
+
+}
+#middle h1{
+	height:36px;
+	width:100%;
+	background:#C0C0C0;
+	font-size:25px;
+	line-height: 36px;
+	text-align:center;
+	font-family: tahoma;
+	color:#fff;
+	margin:27px 0 0 0;
+}
+
+#middle ul{
+	height:23px;
+	line-height: 23px;
+	text-align:center;
+	/*background:red;*/
+	padding:2px 0;
+
+}
+
+#middle ul li{
+	padding:0 90px;
+	display:inline;
+}
+
+#table{
+	width:100%;
+	/*height:122px;*/
+	background:white;
+	/*border:1px solid #ccc;*/
+}
+
+#table table {
+	width:100%;
+}
+
+#table table tr{
+	height:25px;
+}
+
+#table table td{
+	border:1px solid #ccc;
+}
+#table table td.left{
+	width:10%;
+	text-align: center;
+	color:#0000CD;
+
+}
+
+#table table td.left span{
+	float:right;
+	margin-right: 10px;
+}
+
+#table table td.right {
+	width:40%;
+	padding:0 0 0 15px;
+}
+
+#table table td.big {
+	padding:0 0 0 15px;
+}
+
+#table table td.big input.pinfo{
+	width:90%;
+}
+
+
+table.it{
+	width:100%;
+	text-align:center;
+}
+
+table.it tr{
+	line-height:25px;
+}
+
+table.protype {
+	border:2px solid blue;
+}
+
+#protype {
+	border-style:none;
+}
+td.none{
+	border:0 solid blue;
+}
+
+table.protype tr{
+	border-style:none;
+}
+
+
+input.part {
+	width:90%;
+}
+
+input.convdate{
+	height:100%;
+	width:230px;
+}
+
+
+
+
+

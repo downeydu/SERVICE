@@ -1,0 +1,169 @@
+{__NOLAYOUT__}
+<layout name='supportlayout' />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/home/distMission.css">
+
+<script type="text/javascript">
+	$(document).ready(function(){ 
+		$("#scenter").addClass("bar"); 　　
+	}); 
+</script>
+<script type="text/javascript">
+	function finish(){
+		document.form1.action='__ROOT__/Support/finish';
+		document.form1.submit();
+	}
+</script>
+
+<script type="text/javascript">
+	function change(){
+		document.form1.action='__ROOT__/Support/change';
+		document.form1.submit();
+	}
+</script>
+
+
+<title>{$title}</title>
+	<form name='form1' method='post'   enctype="multipart/form-data">
+	<div id='top'>
+
+
+	</div>
+		<input type='hidden' name='ptype' value='{$row[0].ptype}' />
+	<input type='hidden' name='applynum' value='{$applynum}' />
+
+	<div id='middle'>
+		<h1>会议支持服务请求</h1>
+		<table  class='it'>
+			<tr>
+				<td width='50%'>
+					农银人寿保险股份有限公司IT服务台
+				</td>
+				<td width='50%'>
+					发布时间:{$row[0].ctime} &nbsp 
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id='table'>
+		<table>
+			<tr>
+				<td class='left'><span>姓&nbsp&nbsp名:</span></td>
+				<td class='right'>
+					{$row[0].name}
+				</td>
+				<td class='left'><span>电&nbsp&nbsp话:</span></td>
+				<td class='right'>
+										{$row[0].phone}
+
+
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在部门:</span></td>
+				<td class='right'>
+				{$row[0].dname}
+
+				</td>
+				<td class='left'><span>手机:</span></td>
+				<td class='right'>
+				{$row[0].tp}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在处室:</span></td>
+				<td class='right' >
+				{$row[0].subdname}
+				</td>
+				<td class='left'><span>问题类型:</span></td>
+				<td class='right'>
+				{$row[0].ptype}
+
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>请求编号:</span></td>
+				<td class='right'>
+					{$applynum}
+				</td>
+				
+				
+				<td class='left'><span>创建人:</span></td>
+				<td class='right'>
+					{$row[0].creator}
+				</td>
+			</tr>
+			<tr>
+				
+				<td class='left'><span>分配给:</span></td>
+				<td class='right'>
+				{$row[0].distribute}
+				</td>
+				<td class='left'><span>任务状态:</span></td>
+				<td class='right'>
+				{$row[0].status}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>会议时间:</span></td>
+				<td class='right'>
+				{$row[0].convtime}
+				</td>
+				<td class='left'><span>是否数据双流:</span></td>
+				<td class='right'>
+				{$row[0].isd}
+				</td>
+			</tr>
+				<tr>
+				<td class='left'><span>会议类别:</span></td>
+				<td class='right'>
+				{$row[0].convtype}
+				</td>
+				<td class='left'><span>是否自备电脑:</span></td>
+				<td class='right'>
+					{$row[0].ispc}
+				</td>
+				
+			</tr>
+			<tr>
+				<td class='left'><span>接受时间:</span></td>
+				<td class='right'>
+				{$row[0].atime}
+				</td>
+				<td class='left'><span>会议室:</span></td>
+				<td class='right'>
+				{$row[0].croom}
+				</td>
+
+			</tr>
+			<tr>
+				<td class='left'><span>解决时间:</span></td>
+				<td class='right' >
+				{$row[0].stime}
+				</td>
+				<td class='left'><span>解决人:</span></td>
+				<td class='right'>
+				{$row[0].solver}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>参会方:</span></td>
+				<td class='right' colspan="3">
+				{$row[0].participant}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>服务单:</span></td>
+				<td class='right' colspan="3">
+				<a target='_blank' href="{$row[0].sfurl}">查看服务单</a>
+				</td>
+			</tr>
+			
+			
+			
+</table>
+
+</div>
+</form>
+
+
+

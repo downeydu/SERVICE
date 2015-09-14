@@ -1,0 +1,99 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index/allstatic.css">
+<script type="text/javascript">
+	function go(){
+		document.form1.action="__ROOT__/Index/sTSearch";
+		document.form1.submit();
+	}
+
+
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){ 
+		$("#static").addClass("bar"); 　　
+	}); 
+
+</script>
+<h2 class='topic'><span class='tp'>所有的任务</span></h2>
+<div class='search'>
+	<form action='#' method='post' class='alls' name='form1'>
+		<img class='flash' src="__PUBLIC__/image/index/refresh.png" onclick="location.reload();">
+		<span class='search'>搜索</span><input type='text' name='applynum' class='search' />
+		<button class='submit' onclick="go()">搜索</button>
+		<a href="#" class='prompt'>搜索提示</a>
+	</form>
+</div>
+<div class='itt'>
+	<table class='tab'>
+		<th width='12%'>请求编号</th>
+		<th width='8%'>状态</th>
+		<th width='20%'>来源</th>
+		<th width='12%'>问题类型</th>
+		<th width='10%'>执行人</th>
+		<th width='18%'>创建时间</th>
+		<th width='18%'>完成时间</th>
+				<volist name='pri' id='u' >
+					<tr class='bo' onmouseover="this.style.background='#87CEFA'" onmouseout="this.style.background=''">
+					<php>
+						if($u['ptype']=='硬件问题')
+						{
+							if($u['step']=='finish'){
+								$url='hwfDisplay';
+							}else if($u['step']=='accept'){
+								$url='hwaDisplay';
+							}else if($u['step']=='issue'){
+								$url='hwiDisplay';
+							}
+						}
+						else if($u['ptype']=='软件问题')
+						{
+							if($u['step']=='finish'){
+								$url='sffDisplay';
+							}else if($u['step']=='accept'){
+								$url='sfaDisplay';
+							}else if($u['step']=='issue'){
+								$url='sfiDisplay';
+							}
+
+						}
+						else if($u['ptype']=='资产分配')
+						{
+							if($u['step']=='finish'){
+								$url='ppfDisplay';
+							}else if($u['step']=='accept'){
+								$url='ppaDisplay';
+							}else if($u['step']=='issue'){
+								$url='ppiDisplay';
+							}
+
+						}
+						else if($u['ptype']=='会议支持')
+						{
+							if($u['step']=='finish'){
+								$url='cpfDisplay';
+							}else if($u['step']=='accept'){
+								$url='cpaDisplay';
+
+							}else if($u['step']=='issue'){
+								$url='cpiDisplay';
+							}
+
+						}
+						$applynum=$u['applynum'];
+
+					echo "<td><a href='__ROOT__/Index/$url/applynum/$applynum'>$applynum</a></td>";
+					</php>
+						<td>{$u.status}</td>
+						<td>{$u.dname}&nbsp{$u.name}</td>
+						<td>{$u.ptype}</td>
+						<td>{$u.solver}</td>
+						<td>{$u.ctime}</td>
+						<td>{$u.stime}</td>
+					</tr>
+				
+			</volist>
+				<tr >
+					<td colspan="7">{$page}</td>
+				</tr>
+	</table>
+	
+</div>

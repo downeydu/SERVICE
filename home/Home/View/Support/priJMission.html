@@ -1,0 +1,101 @@
+{__NOLAYOUT__}
+<layout name='supportlayout' />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index/allstatic.css">
+<script type="text/javascript">
+	function go(){
+		document.form1.action="__ROOT__/Support/sTSearch";
+		document.form1.submit();
+	}
+
+
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){ 
+		$("#scenter").addClass("bar"); 　　
+	}); 
+
+</script>
+<h2 class='topic'><span class='tp'>完成的普通任务</span></h2>
+<div class='search'>
+	<form action='#' method='post' class='alls' name='form1'>
+		<img class='flash' src="__PUBLIC__/image/index/refresh.png" onclick="location.reload();">
+		<span class='search'>搜索</span><input type='text' name='applynum' class='search' />
+		<button class='submit' onclick="go()">搜索</button>
+		<a href="#" class='prompt'>搜索提示</a>
+	</form>
+</div>
+<div class='itt'>
+	<table class='tab'>
+		<th width='14%'>请求编号</th>
+		<th width='10%'>状态</th>
+		<th width='20%'>来源</th>
+		<th width='10%'>问题类型</th>
+		<th width='10%'>分配给</th>
+		<th width='20%'>创建时间</th>
+		<th width='20%'>完成时间</th>
+				<volist name='prim' id='prim' >
+					<tr class='bo' onmouseover="this.style.background='#87CEFA'" onmouseout="this.style.background=''">
+					<php>
+							if($prim['ptype']=='硬件问题')
+						{
+							if($prim['status']=='已发布'){
+								$url='hwiDisplay';
+							}else if($prim['status']=='已接受'){
+								$url='hwaDisplay';
+							}else if($prim['status']=='已完成'){
+								$url='hwfDisplay';
+							}
+						}
+						else if($prim['ptype']=='软件问题')
+						{
+							if($prim['status']=='已发布'){
+								$url='sfiDisplay';
+							}else if($prim['status']=='已接受'){
+								$url='sfaDisplay';
+							}else if($prim['status']=='已完成'){
+								$url='sffDisplay';
+							}
+
+						}
+						else if($prim['ptype']=='资产分配')
+						{
+							if($prim['status']=='已发布'){
+								$url='ppiDisplay';
+							}else if($prim['status']=='已接受'){
+								$url='ppaDisplay';
+							}else if($prim['status']=='已完成'){
+								$url='ppfDisplay';
+							}
+
+						}
+						else if($prim['ptype']=='会议支持')
+						{
+							if($prim['status']=='已发布'){
+								$url='cpiDisplay';
+							}else if($prim['status']=='已接受'){
+								$url='cpaDisplay';
+							}else if($prim['status']=='已完成'){
+								$url='cpfDisplay';
+							}
+
+						}
+						$applynum=$prim['applynum'];
+						$name=$prim['name'];
+
+						echo "<td><a href='__ROOT__/Support/$url/applynum/$applynum'>$applynum</a></td>";
+					</php>
+						<td>{$prim.status}</td>
+						<td>{$prim.dname}&nbsp{$prim.name}</td>
+						<td>{$prim.ptype}</td>
+						<td>{$prim.distribute}</td>
+						<td>{$prim.ctime}</td>
+						<td>{$prim.stime}</td>
+					</tr>
+				
+			</volist>
+				<tr >
+					<td colspan="7">{$page}</td>
+				</tr>
+	</table>
+	
+</div>

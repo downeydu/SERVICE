@@ -1,0 +1,170 @@
+
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/home/distMission.css">
+	<script type="text/javascript" src="__PUBLIC__/js/disMission.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/showSub.js"></script>
+	<title>{$title}</title>
+	<form name='form1' method='post' >
+	<div id='top'>
+		
+			<!-- <button onclick='edit()' >编辑</button> -->
+			<button onclick="return save(form1)">保存</button>
+			<button onclick="return issue(form1)">发布</button>
+			<!-- <button onclick='index()'>刷新</button> -->
+<!-- 			<button>答复</button>
+			<button>打印</button>
+			<button>退出</button>
+			<button>添加到知识库</button>
+			<button>到知识库查询</button>	
+ -->
+	</div>
+	<div id='middle'>
+		<h1>服务请求</h1>
+		<ul>
+			<li>农银人寿保险股份有限公司IT服务台</li>
+			<li>当前时间:{$now} {$week}</li>
+			<input type='hidden' name='ctime' value='{$now}' />
+		</ul>
+	</div>
+	<div id='table'>
+		<table>
+			<tr>
+				<td class='left'><span>姓&nbsp&nbsp名:</span></td>
+				<td class='right'>
+					<input name='name' type='text' />
+				</td>
+				<td class='left'><span>电&nbsp&nbsp话:</span></td>
+				<td class='right'>
+					<input name='phone' type='text' />
+
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在部门:</span></td>
+				<td class='right'>
+					<select name='dname' id='dept' onchange="showSub(this.value)">
+							<option value='none'>请选择部门</option>
+						<volist name="d" id="dept">
+							<option value='{$dept.deptno}'>{$dept.dname}</option>
+						</volist>
+					</select>
+
+				</td>
+				<td class='left'><span>房间号:</span></td>
+				<td class='right'>
+					<input name='room' type='text' />
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在处室:</span></td>
+				<td class='right' >
+					<div id='txtHint'>
+						
+					</div>
+				</td>
+				<td class='left'><span>问题类型:</span></td>
+				<td class='right'>
+					<select name='ptype'>
+						<option value='none'>请选择问题类型</option>
+						<option value='硬件问题'>硬件问题</option>
+						<option value='软件问题'>软件问题</option>
+						<option value='资产分配'>资产分配</option>
+						<option value='会议支持'>会议支持</option>
+
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>请求编号:</span></td>
+				<td class='right'>
+					{$applynum}
+					<input type='hidden' name='applynum' value='{$applynum}' />
+				</td>
+				
+				
+				<td class='left'><span>创建人:</span></td>
+				<td class='right'>
+					{$Think.session.name}
+					<input type='hidden' name='creator' value='{$Think.session.name}' />
+				</td>
+			</tr>
+			<tr>
+				
+				<td class='left'><span>评价:</span></td>
+				<td class='right'>
+				
+				</td>
+				<td class='left'><span>任务状态:</span></td>
+				<td class='right'>
+					创建中
+					<input type='hidden' name='status' value='创建中' />
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>品牌型号:</span></td>
+				<td class='right'>
+				
+				</td>
+				<td class='left'><span>主机序列号:</span></td>
+				<td class='right'>
+				
+				</td>
+				
+			</tr>
+			<tr>
+				<td class='left'><span>解决时间:</span></td>
+				<td class='right'>
+				
+				</td>
+				<td class='left'><span>解决人:</span></td>
+				<td class='right'>
+				
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>维修信息:</span></td>
+				<td class='right'>
+				
+				</td>
+				<td class='left'><span>维修总费用:</span></td>
+				<td class='right'>
+				
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>分配给:</span></td>
+				<td class='right'>
+					<select name='distribute'>
+						<option value='none'>请选择分配人员</option>
+						<option value='all'>所有人</option>
+						<volist name='u' id='role'>
+							<option value='{$role.name}'>{$role.name}</option>
+						</volist>
+					</select>
+				</td>
+				<td class='left'><span>资产编码:</span></td>
+				<td class='right'>
+				
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>故障描述:</span></td>
+				<td colspan="3" class='big'>
+					<input class='pinfo' type='text'  name='tinfo' />
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>故障原因:</span></td>
+				<td colspan="3" class='big'>
+					
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>解决方法:</span></td>
+				<td colspan="3" class='big'>
+					
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+

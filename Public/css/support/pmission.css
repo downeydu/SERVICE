@@ -1,0 +1,70 @@
+div.mright {
+	background-color:white;
+}
+
+h2.topic{
+	font-weight: bolder;
+	font-size:15px;
+	line-height:25px;
+	width:100%;
+	height:25px;
+	background:url("/itservice/Public/image/index/bgh2.png");
+}
+
+.bar {
+	display:block;
+}
+
+span.tp{
+	float:left;
+	margin-left:10px;
+}
+
+div.table{
+	width:100%;
+	height:95%;
+	text-align:center;
+	padding:10 0 0 0;
+	/*background-color:red;*/
+}
+
+th{
+	background-color:#B0C4DE;
+	text-align:center;
+	font-weight:bolder;
+	font-size:16px;
+	height:30px;
+}
+
+table{
+	margin:0 auto;
+	width:60%;
+	text-align:center;
+}
+
+table tr{
+	height:25px;
+}
+
+table tr td.page {
+	border:none;
+}
+
+a:link {
+	text-decoration: none;
+	color:#008080;
+}
+a:visited {
+	text-decoration: none;
+	color:#008080;
+}
+
+a:hover {
+	text-decoration: none;
+	color:red;
+}
+
+/*s*/
+
+
+

@@ -1,0 +1,64 @@
+<h2>[保存的任务]</h2>
+	<ul class='sp'>
+		<volist name='mis' id='m'>
+		<li><em>{$m.ctime|substr=11}</em><a class='sp' href="__APP__/Index/tDisplay/applynum/{$m.applynum}">{$m.dname}{$m.name} {$m.ptype}</a></li>
+		</volist>
+		
+
+    </ul>
+</div>
+<div id='pmid'>
+	<h2>[发布的任务]</h2>
+	<ul class='sp'>
+		<volist name='iss' id='i'>
+		<li><em>{$i.ctime|substr=11}</em><a class='sp' href="__APP__/Index/iDisplay/applynum/{$i.applynum}">{$i.dname}{$i.name} {$i.ptype}</a></li>
+
+		</volist>
+		
+
+    </ul>
+</div>
+<div id='pright'>
+	<h2>[待评价任务]</h2>
+	<ul class='sp'>
+		<volist name='jm' id='jm'>
+			<li><em>{$jm.stime|substr=11}</em><a class='sp' href="__APP__/Index/jDisplay/applynum/{$jm.applynum}">{$jm.dname}{$jm.name} {$jm.ptype} {$jm.solver}执行</a></li>
+
+		</volist>
+		
+
+    </ul>
+</div>
+<div id='plast'>
+	<h2>[完成的任务]</h2>
+	<ul class='sp'>
+		<volist name='fm' id='fm'>
+
+		<li><em>{$fm.ftime|substr=11}</em><a class='sp' href="__APP__/Index/fDisplay/applynum/{$fm.applynum}">{$fm.dname}{$fm.name} {$fm.ptype} {$fm.solver}完成</a></li>
+		</volist>
+		
+
+
+    </ul>
+
+
+
+
+    if($vipm['status']=='已创建')
+						{
+							echo "<td><a href='__ROOT__/Index/distMission/applynum/{$vipm.applynum}'>{$vipm.name}</a></td>";
+						}
+						else if($vipm['status']=='已发布')
+						{
+							ecoh "<td><a href='__ROOT__/Index/iDisplay/applynum/{$vipm.applynum}'>{$vipm.name}</a></td>";
+						}
+						else if($vipm['status']=='待评价')
+						{
+							ecoh "<td><a href='__ROOT__/Index/jDisplay/applynum/{$vipm.applynum}'>{$vipm.name}</a></td>";
+
+						}
+						else if($vipm['status']=='已完成')
+						{
+							ecoh "<td><a href='__ROOT__/Index/fDisplay/applynum/{$vipm.applynum}'>{$vipm.name}</a></td>";
+						
+						}

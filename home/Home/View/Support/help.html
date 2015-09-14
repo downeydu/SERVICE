@@ -1,0 +1,106 @@
+{__NOLAYOUT__}
+<layout name='supportlayout' />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index/allstatic.css">
+
+   <link href="__PUBLIC__/css/index/sysinfo.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('#system').addClass('bar');
+    });
+
+</script>
+<h2 class='topic'><span class='tp'>问题与帮助 </span></h2>
+
+    <div style="margin-top: 30px;" id='font'></div>
+
+        <div class="u-main">
+            <div id="tab_menu">
+                <ul class="u-tab clearfix" >
+                    <li class='current'><a>常见问题</a></li>
+                    <li><a>寻求帮助</a></li>
+                    <!-- <li><a>任务统计</a></li> -->
+                    <!-- <li ><a>国付宝充值</a></li>
+                    <li><a>充值记录</a></li>
+                    <li><a>微信支付</a></li> -->
+                    <!-- <li><a href="">关于我们</a></li> -->
+                </ul>
+            </div>
+            <div id="tab_box">
+                <div class="u-form-wrap">
+                        <div class="uf-tips">
+                            <ul>
+                                <li>如果您操作中遇到困难或者有好的建议,请您联系信息技术部 网络运维处 杜斌</li>
+                                <li>邮箱:dubin@abchinalife.cn</li>
+                                <li>座机:88101</li>
+                                <li>手机:15901276349</li>
+                            </ul>
+                            
+                        </div>
+                        
+                </div>
+
+                <div class="u-form-wrap" style="display: none;">
+                          <div class="uf-tips">
+                            <ul>
+                                <li>1、</li>
+                                <li>2、</li>
+                                <li>3、</li>
+                                <li>4、</li>
+                                <li>5、</li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="u-form-wrap" style="display: none;">
+                     <div class="uf-tips">
+                            <ul>
+                                <li>1、任务统计中您可以了解自己任务的完成情况和接收任务的积极性;</li>
+                                <li>2、<span style='font-weight:bolder'>按照类别</span>,按照问题属性分类;</li>
+                                <li>3、<span style='font-weight:bolder'>按照部门</span>,这里可以看到每个部门的问题分布情况;</li>
+                                <li>4、<span style='font-weight:bolder'>本周任务</span>,本周一到周日你的所有接受的任务;</li>
+                                <li>5、<span style='font-weight:bolder'>自定义</span>,你可以依据时间去搜索某范围的任务,直接显示出任务,或者导出完成情况统计; </li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="u-form-wrap" style="display: none;">
+                    <div>
+                        充值记录4
+                    </div>
+                </div>
+                <div class="u-form-wrap" style="display: none;">
+                    <div>
+                        微信充值5
+                    </div>
+                 </div>
+                 <div class="u-form-wrap" style="display: none;">
+                    <div>
+                        微信充值6
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+            <script type="text/javascript">
+                //div_li 得到li的一个标签组
+                var $div_li = $("#tab_menu ul li"); 
+
+                $div_li.click(function () {
+                    //当点击对应的li标签,为其加上current类,其它同组标签去掉current类
+                    $(this).addClass("current").siblings().removeClass("current");
+                    //index() 函数可以返回一个元组组的所以,以此为例,点击第一个li 返回0,第二个返回2,
+                    var div_index = $div_li.index(this);
+                    // document.getElementById('font').innerHTML="<span style='color:red' >"+div_index+"</span>";
+                    $("#tab_box>div").eq(div_index).show().siblings().hide();
+
+                }).hover(function () {
+
+                    $(this).addClass("hover");
+
+                }, function () {
+
+                    $(this).removeClass("hover");
+
+                });
+
+            </script>
+

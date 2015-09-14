@@ -1,0 +1,175 @@
+{__NOLAYOUT__}
+<layout name='supportlayout' />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index/allstatic.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index/tcal.css">
+<script type="text/javascript" src="__PUBLIC__/js/support/laydate.js"></script>
+<!-- 日历样式 -->
+<style type="text/css">
+*{margin:0;padding:0;list-style:none;}
+html{background-color:#E3E3E3; font-size:14px; color:#000; font-family:'微软雅黑'}
+h2{line-height:30px; font-size:20px;}
+a,a:hover{ text-decoration:none;}
+pre{font-family:'微软雅黑'}
+.box{width:970px; padding:10px 20px; background-color:#fff; margin:10px auto;}
+.box a{padding-right:20px;}
+.demo1,.demo2,.demo3,.demo4,.demo5,.demo6{margin:25px 0;}
+h3{margin:10px 0;}
+.layinput{height: 22px;line-height: 22px;width: 150px;margin: 0;}
+</style>
+
+<script type="text/javascript" src="__PUBLIC__/js/index/tcal.js" ></script>  
+
+<script type="text/javascript">
+	function custom(Form){
+		if(Form.start.value=="" || Form.start.value==null){
+			alert("请输入起始时间");
+			Form.start.focus();
+			return false;
+		}else if(Form.end.value=="" || Form.end.value==null){
+			alert("请输入终止时间");
+			Form.end.focus();
+			return false;
+		}
+
+		document.form1.action="__ROOT__/Support/sCSearch";
+		document.form1.submit();
+	}
+
+	function imports(Form){
+		if(Form.start.value=="" || Form.start.value==null){
+			alert("请输入起始时间");
+			Form.start.focus();
+			return false;
+		}else if(Form.end.value=="" || Form.end.value==null){
+			alert("请输入终止时间");
+			Form.end.focus();
+			return false;
+		}
+
+		document.form1.action="__ROOT__/Support/impStatic";
+		document.form1.submit();
+	}
+
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#static').addClass('bar');
+	});
+
+</script>
+<h2 class='topic'><span class='tp'>自定义统计</span></h2>
+<div class='search'>
+	<form action='#' method='post' class='alls' name='form1'>
+		<span class='start'>起始时间</span>
+		<input type="text" name="start" class="tcal" id='startt' value="" />
+		<span class='start'>结束时间</span>
+		<input type="text" name="end" class="tcal" id='startt' value="" />
+
+		<select name="ptype" id="ptypes">
+			<option value="none">选择问题类别</option>
+			<option value="硬件问题">硬件问题</option>
+			<option value="软件问题">软件问题</option>
+			<option value="资产分配">资产分配</option>
+			<option value="会议支持">会议支持</option>
+		</select>
+		<button class='submit2' onclick="return custom(form1)">搜索</button>
+		<button class='submit2' onclick="return imports(form1)">导出统计</button>
+
+	</form>
+</div>
+<div class='itt'>
+	<table class='tab'>
+		<th width='12%'>请求编号</th>
+		<th width='8%'>状态</th>
+		<th width='20%'>来源</th>
+		<th width='12%'>问题类型</th>
+		<th width='10%'>执行人</th>
+		<th width='18%'>创建时间</th>
+		<th width='18%'>完成时间</th>
+			<volist name='week' id='week' >
+					<tr class='bo' onmouseover="this.style.background='#87CEFA'" onmouseout="this.style.background=''">
+					<php>
+						$applynum=$week['applynum'];
+						if($week['ptype']=='硬件问题')
+						{
+							if($week['step']=='finish'){
+								$url='hwfDisplay';
+							}else if($week['step']=='accept'){
+								$url='hwaDisplay';
+							}
+						}
+						else if($week['ptype']=='软件问题')
+						{
+							if($week['step']=='finish'){
+								$url='sffDisplay';
+							}else if($week['step']=='accept'){
+								$url='sfaDisplay';
+							}
+
+						}
+						else if($week['ptype']=='资产分配')
+						{
+							if($week['step']=='finish'){
+								$url='ppfDisplay';
+							}else if($week['step']=='accept'){
+								$url='ppaDisplay';
+							}
+
+						}
+						else if($week['ptype']=='会议支持')
+						{
+							if($week['step']=='finish'){
+								$url='cpfDisplay';
+							}else if($week['step']=='accept'){
+								$url='cpaDisplay';
+							}
+
+						}
+						
+
+					echo "<td><a href='__ROOT__/Support/$url/applynum/$applynum'>$applynum</a></td>"
+					</php>
+						<td>{$week.status}</td>
+						<td>{$week.dname}&nbsp{$week.name}</td>
+						<td>{$week.ptype}</td>
+						<td>{$week.solver}</td>
+						<td>{$week.ctime}</td>
+						<td>{$week.stime}</td>
+					</tr>
+				
+			</volist>
+				<tr >
+					<td colspan="7">{$page}</td>
+				</tr>
+	</table>
+	<!-- <table>
+		<tr>
+			<td width='12%'>未完成任务:</td>
+			<td width='6%'>{$unfn}个</td>
+			<td width='20%'></td>
+			<td width='12%'></td>
+			<td width='18%'></td>
+			<td width='18%'></td>
+			<td width='12%'></td>
+		</tr>
+		<tr>
+			<td>共完成任务:</td>
+			<td>{$fn}个</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>完成率:</td>
+			<td>{$rate}</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+
+	</table> -->
+</div>

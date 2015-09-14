@@ -1,0 +1,246 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title><?php echo ($title); ?></title>
+	<meta charset='utf-8' />
+	<meta name='creator' content='DuBin' />
+	<meta name='generater' content="ThinkPHP" />
+	<meta name='create_time' content="2015-04-02 00:21" />
+	<link rel="stylesheet" type="text/css" href="/itservice/Public/css/service/header.css">
+	<link rel="stylesheet" type="text/css" href="/itservice/Public/css/service/leftnav.css">
+	<script type="text/javascript" src='/itservice/Public/js/index/clock.js'></script>
+	<script type="text/javascript" src='/itservice/Public/js/jquery-1.9.1.min.js'></script>
+	<script type="text/javascript">
+		$(function(){
+		$(".subNav").click(function(){
+					$(this).toggleClass("currentDd").siblings(".subNav").removeClass("currentDd")
+					$(this).toggleClass("currentDt").siblings(".subNav").removeClass("currentDt")
+					
+					// 修改数字控制速度， slideUp(500)控制卷起速度
+					$(this).next(".navContent").slideToggle(200).siblings(".navContent").slideUp(200);
+			})	
+		})
+
+	</script>
+	<!-- background:url('/itservice/Public/image/service/jiantou1.jpg') no-repeat; -->
+	<!-- background-position:95% 50%; -->
+	<style type="text/css">
+		.subNavBox{width:99%;border:solid 1px #48D1CC;margin:100px auto;}
+		.subNav{border-bottom:solid 1px #48D1CC;cursor:pointer;font-weight:bold;font-size:14px;color:white;line-height:28px;padding-left:10px;background:url("/itservice/Public/image/service/navbg.png");}
+		.subNav:hover{color:yellow;}
+		.currentDd{color:yellow}
+		/*.currentDt{background-image:url("/itservice/Public/image/service/jiantou.jpg");}*/
+		.navContent{display: none;border-bottom:solid 1px #e5e3da;}
+		.navContent li a{display:block;width:100%;height:28px;text-align:center;font-size:14px;line-height:28px;color:#333}
+		.navContent li a:hover{color:#fff;background-color:#20B2AA;}
+	</style>
+	<script type="text/javascript">
+		function chheight(){
+			var width = document.body.clientWidth;
+			var height = document.body.clientHeight;
+			mleft = document.getElementById('blockmleft');
+			mright = document.getElementById('blockmright');
+			mleft.style.height=height-95;
+			mright.style.height=height-95;
+		}
+
+	</script>
+
+</head>
+<body onload="return chheight()">
+<!-- 	<div class='all'>
+ -->	<div class='header'>
+		<div class='hleft'>
+			<img src="/itservice/Public/image/service/abc.png">
+		</div>
+		<div class='hmid'>
+			<span>农银人寿IT服务台系统</span>
+		</div>
+		<div class='hright'>
+			<table class='tab'>
+				<tr>
+					<td width='25%'>你好,<?php echo (session('name')); ?></td>
+					<td width='25%'><a class='head' href="#">[使用须知]</a></td>
+					<td width='25%'><a class='head' href="/itservice/Index/servicePhone">[返回首页]</a></td>
+					<td width='25%'><a class='head' href="<?php echo U('/Home/Public/logout');?>">[退出系统]</a></td>
+				</tr>
+				<tr>
+					<td colspan="2">版本号:V1.0</td>
+					<td colspan="2" >当前时间:<span id='txt'></span></td>
+				</tr>
+			</table>
+		</div >
+			
+
+	</div>
+
+	<div class='mleft' id='blockmleft'>
+		<div class="subNavBox nav">
+			<div class="subNav currentDd currentDt">任务中心</div>
+			<ul class="navContent " style="display:block">
+					<li><a href="/itservice/Index/distMission">任务分配</a></li>
+					<li><a href="/itservice/Index/hiMission">已发布任务</a></li>
+					<li><a href="/itservice/Index/haMission">已接受任务</a></li>
+					<li><a href="/itservice/Index/wjMission">待评价任务</a></li>
+					<li><a href="/itservice/Index/hfMission">已完成任务</a></li>
+			</ul>
+			<div class="subNav">任务统计</div>
+			<ul class="navContent">
+					<li><a href="/itservice/Index/allStatic">所有任务</a></li>
+					<li><a href="#">添加信息</a></li>
+					<li><a href="#">添加信息</a></li>
+			</ul>
+			<div class="subNav">完成任务</div>
+			<ul class="navContent">
+					<li><a href="/itservice/Index/test1">完成任务</a></li>
+					<li><a href="#">添加信息</a></li>
+					<li><a href="#">添加信息</a></li>
+					<li><a href="#">添加信息</a></li>
+			</ul>
+			<div class="subNav">关于我们</div>
+			<ul class="navContent">
+					<li><a href="#">添加新闻</a></li>
+					<li><a href="#">添加新闻</a></li>
+					<li><a href="#">新闻管理</a></li>
+					<li><a href="#">添加新闻</a></li>
+					<li><a href="#">新闻管理</a></li>
+			</ul>
+			
+			<div class="subNav">xxxxx</div>
+			<ul class="navContent">
+					<li><a href="#">添加新闻</a></li>
+					<li><a href="#">添加新闻</a></li>
+					<li><a href="#">新闻管理</a></li>
+					<li><a href="#">添加新闻</a></li>
+					<li><a href="#">新闻管理</a></li>
+			</ul>
+			<div class="subNav">xxxxx</div>
+			<ul class="navContent">
+					<li><a href="#">添加新闻</a></li>
+					<li><a href="#">添加新闻</a></li>
+					<li><a href="#">新闻管理</a></li>
+					<li><a href="#">添加新闻</a></li>
+					<li><a href="#">新闻管理</a></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+	<div class='mright' id='blockmright'>
+		
+	<link rel="stylesheet" type="text/css" href="/itservice/Public/css/home/distMission.css">
+	<link rel="stylesheet" type="text/css" href="/itservice/Public/css/home/getPType.css">
+	<script type="text/javascript" src="/itservice/Public/js/disMission.js"></script>
+	<script type="text/javascript" src="/itservice/Public/js/showSub.js"></script>
+	<script type="text/javascript" src="/itservice/Public/js/showPType.js"></script>
+	<title><?php echo ($title); ?></title>
+	<form name='form1' method='post' >
+	<div id='top'>
+		
+			<!-- <button onclick='edit()' >编辑</button> -->
+			<button onclick="return save(form1)">保存</button>
+			<button onclick="return issue(form1)">发布</button>
+			<!-- <button onclick='index()'>刷新</button> -->
+<!-- 			<button>答复</button>
+			<button>打印</button>
+			<button>退出</button>
+			<button>添加到知识库</button>
+			<button>到知识库查询</button>	
+ -->
+	</div>
+	<div id='middle'>
+		<h1>服务请求</h1>
+		<ul>
+			<li>农银人寿保险股份有限公司IT服务台</li>
+			<li>当前时间:<?php echo ($now); ?> <?php echo ($week); ?></li>
+			<input type='hidden' name='ctime' value='<?php echo ($now); ?>' />
+		</ul>
+	</div>
+	<div id='table'>
+		<table>
+			<tr>
+				<td class='left'><span>姓&nbsp&nbsp名:</span></td>
+				<td class='right'>
+					<input name='name' type='text' />
+				</td>
+				<td class='left'><span>电&nbsp&nbsp话:</span></td>
+				<td class='right'>
+					<input name='phone' type='text' />
+
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在部门:</span></td>
+				<td class='right'>
+					<select name='dname' id='dept' onchange="showSub(this.value)">
+							<option value='none'>请选择部门</option>
+						<?php if(is_array($d)): $i = 0; $__LIST__ = $d;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$dept): $mod = ($i % 2 );++$i;?><option value='<?php echo ($dept["deptno"]); ?>'><?php echo ($dept["dname"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+					</select>
+
+				</td>
+				<td class='left'><span>房间号:</span></td>
+				<td class='right'>
+					<input name='room' type='text' />
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在处室:</span></td>
+				<td class='right' >
+					<div id='subdname'>
+						
+					</div>
+				</td>
+				<td class='left'><span>问题类型:</span></td>
+				<td class='right'>
+					<select name='ptype' onchange="showPType(this.value)">
+						<option value='none'>请选择问题类型</option>
+						<option value='hwp'>硬件问题</option>
+						<option value='sfp'>软件问题</option>
+						<option value='pp'>资产分配</option>
+						<option value='cp'>会议支持</option>
+
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>请求编号:</span></td>
+				<td class='right'>
+					<?php echo ($applynum); ?>
+					<input type='hidden' name='applynum' value='<?php echo ($applynum); ?>' />
+				</td>
+				
+				
+				<td class='left'><span>创建人:</span></td>
+				<td class='right'>
+					<?php echo (session('name')); ?>
+					<input type='hidden' name='creator' value='<?php echo (session('name')); ?>' />
+				</td>
+			</tr>
+			<tr>
+				
+				<td class='left'><span>资产编码:</span></td>
+				<td class='right'>
+				
+				</td>
+				<td class='left'><span>任务状态:</span></td>
+				<td class='right'>
+					创建中
+					<input type='hidden' name='status' value='创建中' />
+				</td>
+			</tr>
+
+		</table>
+	</div>
+	<div class='pcontainer' id='Hint'>
+		<?php include 'hwptype.html'; ?>
+	</div>
+	</form>
+
+
+	</div>
+	<div class='foot'>
+	<span>版权所有 Copyright ABC Life Insurance Co.,Ltd.All Rights Reserved</span>
+	</div>
+	</body>
+	
+	
+	</html>

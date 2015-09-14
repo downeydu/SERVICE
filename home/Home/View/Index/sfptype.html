@@ -1,0 +1,172 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/home/distMission.css">
+<script type="text/javascript" src="__PUBLIC__/js/disMission.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/showSub.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/index/sfptype.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){ 
+		$("#dist").addClass("bar"); 　　
+	}); 
+</script>
+
+<title>{$title}</title>
+	<form name='form1' method='post' >
+	<div id='top'>
+		
+			<button onclick="return save(form1)">保存</button>
+			<button onclick="return issue(form1)">发布</button>
+	</div>
+	<div id='middle'>
+		<h1>软件服务请求</h1>
+		<table  class='it'>
+			<tr>
+				<td width='50%'>
+					农银人寿保险股份有限公司IT服务台
+				</td>
+				<td width='50%'>
+					当前时间:{$date} &nbsp <span id='txt'></span>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id='table'>
+		<table>
+			<tr>
+				<td class='left'><span>姓&nbsp&nbsp名:</span></td>
+				<td class='right'>
+					<input name='name' type='text' />
+				</td>
+				<td class='left'><span>电&nbsp&nbsp话:</span></td>
+				<td class='right'>
+					<input name='phone' type='text' />
+
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在部门:</span></td>
+				<td class='right'>
+					<select name='dname' id='dept' onchange="showSub(this.value)">
+							<option value='none'>请选择部门</option>
+						<volist name="d" id="dept">
+							<option value='{$dept.deptno}'>{$dept.dname}</option>
+						</volist>
+					</select>
+
+				</td>
+				<td class='left'><span>手机:</span></td>
+				<td class='right'>
+					<input name='tp' type='text' />
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在处室:</span></td>
+				<td class='right' >
+					<div id='subd'>
+						
+					</div>
+				</td>
+				<td class='left'><span>问题类型:</span></td>
+				<td class='right'>
+					{$ptype}
+					<input type='hidden' name='ptype' value='{$ptype}' />
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>请求编号:</span></td>
+				<td class='right'>
+					{$applynum}
+					<input type='hidden' name='applynum' value='{$applynum}' />
+				</td>
+				
+				
+				<td class='left'><span>创建人:</span></td>
+				<td class='right'>
+					{$Think.session.name}
+					<input type='hidden' name='creator' value='{$Think.session.name}' />
+				</td>
+			</tr>
+			<tr>
+				
+				<td class='left'><span>分配给:</span></td>
+				<td class='right'>
+					<select name='distribute'>
+						<option value='none'>请选择分配人员</option>
+						<option value='所有人'>所有人</option>
+						<volist name='u' id='role'>
+							<option value='{$role.name}'>{$role.name}</option>
+						</volist>
+					</select>
+				</td>
+				<td class='left'><span>任务状态:</span></td>
+				<td class='right'>
+					创建中
+					<input type='hidden' name='status' value='创建中' />
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>软件类别:</span></td>
+				<td class='right'>
+					<select name='sftype'>
+						<option value='none'>选择软件类别</option>
+						<option value='OA办公自动化系统'>OA办公自动化系统</option>
+						<option value='邮件客户端'>邮件客户端</option>
+						<option value='打印机驱动'>打印机驱动</option>
+						<option value='网页浏览器'>网页浏览器</option>
+						<option value='内部WEB系统'>内部WEB系统</option>
+						<option value='其它'>其它</option>
+					</select>
+				</td>
+				<td class='left'><span>品牌型号:</span></td>
+				<td class='right'>
+				
+				</td>
+			</tr>
+				<tr>
+				<td class='left'><span>接受时间:</span></td>
+				<td class='right'>
+				
+				</td>
+				
+				<td class='left'><span>主机序列号:</span></td>
+				<td class='right'>
+				
+				</td>
+				
+			</tr>
+			<tr>
+				<td class='left'><span>解决时间:</span></td>
+				<td class='right'>
+				
+				</td>
+				<td class='left'><span>解决人:</span></td>
+				<td class='right'>
+				
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class='left'><span>故障描述:</span></td>
+				<td colspan="3" class='big'>
+					<input class='pinfo' type='text'  name='tinfo' />
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>故障原因:</span></td>
+				<td colspan="3" class='big'>
+					
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>解决方法:</span></td>
+				<td colspan="3" class='big'>
+					
+				</td>
+			</tr>
+</table>
+</div>
+</form>
+
+
+
+
+

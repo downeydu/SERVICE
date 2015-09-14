@@ -1,0 +1,71 @@
+{__NOLAYOUT__}
+<layout name='supportlayout' />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index/allstatic.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index/tcal.css">
+<script type="text/javascript" src="__PUBLIC__/js/support/laydate.js"></script>
+
+
+<script type="text/javascript" src="__PUBLIC__/js/index/tcal.js" ></script>  
+
+<script type="text/javascript">
+	function edituser(From){
+
+		document.form1.action="__ROOT__/Support/edituser";
+		document.form1.submit();
+	}
+</script>
+
+<h2 class='topic'>
+<form  method='post' name='form1' >
+	<span class='tp'>用户信息</span>
+	<button class='user' onclick="return edituser(form1)">修改信息</button>
+
+</h2>
+<div class='usertab'>
+<volist id='user' name='user'>
+	<table  class='user'>
+		<tr class='usertr' onmouseover="this.style.background='white'" onmouseout="this.style.background=''">
+			<td width='30%' class="usertd"><span class='ufont'>用户名</span></td>
+			<td class="usertd"><span class='dfont'>{$user['user']}</span></td>
+			<input type='hidden' name='userid' value="{$user['id']}" />
+		</tr>
+	</table>
+	<table  class='user'>
+		<tr class='usertr' onmouseover="this.style.background='white' " onmouseout="this.style.background=''">
+			<td width='30%' class="usertd"><span class='ufont'>姓名</span></td>
+			<td class="usertd"><span class='dfont'>{$user['name']}</span></td>
+		</tr>
+	</table>
+	<table  class='user'>
+		<tr class='usertr' onmouseover="this.style.background='white' " onmouseout="this.style.background=''">
+			<td width='30%' class="usertd"><span class='ufont'>座机</span></td>
+			<td class="usertd"><span class='dfont'>{$user['phone']}</span></td>
+		</tr>
+	</table>
+	<table  class='user'>
+		<tr class='usertr' onmouseover="this.style.background='white' " onmouseout="this.style.background=''">
+			<td width='30%' class="usertd"><span class='ufont'>手机</span></td>
+			<td class="usertd"><span class='dfont'>{$user['telephone']}</span></td>
+		</tr>
+	</table>
+	<table  class='user'>
+		<tr class='usertr' onmouseover="this.style.background='white' " onmouseout="this.style.background=''">
+			<td width='30%' class="usertd"><span class='ufont'>邮箱</span></td>
+			<td class="usertd"><span class='dfont'>{$user['mail']}</span></td>
+		</tr>
+	</table>
+	<table  class='user'>
+		<tr class='usertr' onmouseover="this.style.background='white' " onmouseout="this.style.background=''">
+			<td width='30%' class="usertd"><span class='ufont'>密码</span></td>
+			<td class="usertd"><span class='dfont'>*******************</span></td>
+		</tr>
+	</table>
+	<table  class='user'>
+		<tr class='usertr' onmouseover="this.style.background='white' " onmouseout="this.style.background=''">
+			<td width='30%' class="usertd"><span class='ufont'>公司</span></td>
+			<td class="usertd"><span class='dfont'>{$user['company']}</span></td>
+		</tr>
+	</table>
+</volist>
+</div>
+</form>

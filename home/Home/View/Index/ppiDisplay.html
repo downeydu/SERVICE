@@ -1,0 +1,146 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/home/distMission.css">
+<script type="text/javascript" src="__PUBLIC__/js/disMission.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/index/pptype.js"></script>
+<style type="text/css">
+	#p{
+		border:1px solid blue;
+	}
+
+
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function(){ 
+		$("#sum").addClass("bar"); 　　
+	}); 
+</script>
+<title>{$title}</title>
+	<form name='form1' method='post' >
+	<div id='top'>
+		
+			<!-- <button onclick='edit()' >编辑</button> -->
+<!-- 			<button onclick="return save(form1)">保存</button>
+			<button onclick="return issue(form1)">发布</button>
+ -->			<!-- <button onclick='index()'>刷新</button> -->
+<!-- 			<button>答复</button>
+			<button>打印</button>
+			<button>退出</button>
+			<button>添加到知识库</button>
+			<button>到知识库查询</button>	
+ -->
+	</div>
+	<div id='middle'>
+		<h1>资产分配服务请求</h1>
+		<table  class='it'>
+			<tr>
+				<td width='50%'>
+					农银人寿保险股份有限公司IT服务台
+				</td>
+				<td width='50%'>
+					发布时间:{$row[0].ctime}
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id='table'>
+		<table class='dist'>
+			<tr>
+				<td class='left'><span>姓&nbsp&nbsp名:</span></td>
+				<td class='right'>
+				{$row[0].name}
+				</td>
+				<td class='left'><span>电&nbsp&nbsp话:</span></td>
+				<td class='right'>
+				{$row[0].phone}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在部门:</span></td>
+				<td class='right'>
+				{$row[0].dname}
+				</td>
+				<td class='left'><span>所在位置:</span></td>
+				<td class='right'>
+				{$row[0].tp}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在处室:</span></td>
+				<td class='right' >
+				{$row[0].subdname}
+				</td>
+				<td class='left'><span>问题类型:</span></td>
+				<td class='right'>
+				{$row[0].ptype}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>请求编号:</span></td>
+				<td class='right'>
+					{$row[0].applynum}
+					<input type='hidden' name='applynum' value='{$applynum}' />
+				</td>
+				
+				
+				<td class='left'><span>创建人:</span></td>
+				<td class='right'>
+					{$row[0].creator}
+					<input type='hidden' name='creator' value='{$Think.session.name}' />
+				</td>
+			</tr>
+			<tr>
+				
+				<td class='left'><span>分配给:</span></td>
+				<td class='right'>
+				{$row[0].distribute}
+				</td>
+				<td class='left'><span>任务状态:</span></td>
+				<td class='right'>
+				{$row[0].status}
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td class='left'><span>分配原因:</span></td>
+				<td class='right' colspan="3">
+				{$row[0].distreason}
+				</td>
+			
+				
+			</tr>
+			<tr >
+				<td class='left' ><span>资产类别:</span></td>
+				<td  colspan="3" class='right'>
+					{$row[0].protype}
+				</td>
+			</tr>
+				<tr>
+				<td class='left'><span>型号/版本:</span></td>
+				<td class='right'>
+				</td>
+				<td class='left'><span>SN/KEY:</span></td>
+				<td class='right'>
+				</td>
+				
+			</tr>
+			<tr>
+				<td class='left'><span>解决时间:</span></td>
+				<td class='right'>
+				</td>
+				<td class='left'><span>解决人:</span></td>
+				<td class='right'>
+					
+				</td>
+			</tr>
+			
+			
+			
+</table>
+</div>
+</form>
+
+
+
+
+

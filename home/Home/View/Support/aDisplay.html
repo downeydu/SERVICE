@@ -1,0 +1,158 @@
+{__NOLAYOUT__}
+<layout name='supportlayout' />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/support/aDisplay.css">
+	<script type="text/javascript" src="__PUBLIC__/js/support/adisplay.js"></script>
+	<title>{$title}</title>
+	<form name='form1' method='post' >
+	<div id='top'>
+		
+			<!-- <button onclick='edit()' >编辑</button> -->
+			<button onclick="return finish(form1)">完成提交</button>
+			<input type='hidden' name='applynum' value='{$row[0].applynum}' />			
+			<button onclick="return change()">转交他人</button>
+			<!-- <button onclick='index()'>刷新</button> -->
+<!-- 			<button>答复</button>
+			<button>打印</button>
+			<button>退出</button>
+			<button>添加到知识库</button>
+			<button>到知识库查询</button>	
+ -->
+	</div>
+	<div id='middle'>
+		<h1>服务请求</h1>
+<!-- 		<ul>
+			<li>农银人寿保险股份有限公司IT服务台</li>
+			<li>发布时间:{$row[0].ctime}</li>
+		</ul>
+ -->		<table  class='it'>
+			<tr>
+				<td width='50%'>
+					农银人寿保险股份有限公司IT服务台
+				</td>
+				<td width='50%'>
+					接受时间:{$row[0].atime}
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id='table'>
+		<table>
+			<tr>
+				<td class='left'><span>姓&nbsp&nbsp名:</span></td>
+				<td class='right'>
+					{$row[0].name}
+				</td>
+				<td class='left'><span>电&nbsp&nbsp话:</span></td>
+				<td class='right'>
+					{$row[0].phone}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在部门:</span></td>
+				<td class='right'>
+					{$row[0].dname}
+				</td>
+				<td class='left'><span>房间号:</span></td>
+				<td class='right'>
+					{$row[0].room}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在处室:</span></td>
+				<td class='right' >
+					{$row[0].subdname}
+				</td>
+				<td class='left'><span>问题类型:</span></td>
+				<td class='right'>
+					{$row[0].ptype}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>请求编号:</span></td>
+				<td class='right'>
+					{$row[0].applynum}
+				</td>
+				
+				
+				<td class='left'><span>创建人:</span></td>
+				<td class='right'>
+					{$row[0].creator}
+				</td>
+			</tr>
+			<tr>
+				
+				<td class='left'><span>评价:</span></td>
+				<td class='right'>
+				
+				</td>
+				<td class='left'><span>任务状态:</span></td>
+				<td class='right'>
+					{$row[0].status}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>品牌型号:</span></td>
+				<td class='right'>
+					<input type='text' name='brand' />
+				</td>
+				<td class='left'><span>主机序列号:</span></td>
+				<td class='right'>
+					<input type='text' name='sn' />
+				</td>
+				
+			</tr>
+			<tr>
+				<td class='left'><span>解决时间:</span></td>
+				<td class='right'>
+				
+				</td>
+				<td class='left'><span>解决人:</span></td>
+				<td class='right'>
+					<select name='solver'>
+						<option value='{$Think.session.name}'>{$Think.session.name}</option>
+						<volist name='role' id='r'>
+							<option value='{$r.name}'>{$r.name}</option>
+						</volist>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>维修信息:</span></td>
+				<td class='right'>
+					<input class='fixinfo' type='text' name='fixinfo' />
+				</td>
+				<td class='left'><span>维修总费用:</span></td>
+				<td class='right'>
+					<input type='text' name='fixpay' />
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>分配给:</span></td>
+				<td class='right'>{$distribute}</td>
+				<td class='left'><span>资产编码:</span></td>
+				<td class='right'>
+					<input type='text' name='pnum' />
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>故障描述:</span></td>
+				<td colspan="3" class='big'>
+					{$row[0].tinfo}
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>故障原因:</span></td>
+				<td colspan="3" class='big'>
+					<input class='treason' type='text' name='treason' />
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>解决方法:</span></td>
+				<td colspan="3" class='big'>
+					<input class='method' type='text' name='method' />
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+

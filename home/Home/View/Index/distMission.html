@@ -1,0 +1,125 @@
+
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/home/distMission.css">
+	<script type="text/javascript" src="__PUBLIC__/js/disMission.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/showSub.js"></script>
+	<script type="text/javascript">
+		
+
+
+	</script>
+	<title>{$title}</title>
+	<form name='form1' method='post' >
+	<div id='top'>
+		
+			<!-- <button onclick='edit()' >编辑</button> -->
+<!-- 			<button onclick="return save(form1)">保存</button>
+			<button onclick="return issue(form1)">发布</button>
+ -->			<!-- <button onclick='index()'>刷新</button> -->
+<!-- 			<button>答复</button>
+			<button>打印</button>
+			<button>退出</button>
+			<button>添加到知识库</button>
+			<button>到知识库查询</button>	
+ -->
+	</div>
+	<div id='middle'>
+		<h1>服务请求</h1>
+		<table  class='it'>
+			<tr>
+				<td width='50%'>
+					农银人寿保险股份有限公司IT服务台
+				</td>
+				<td width='50%'>
+					当前时间:{$now} &nbsp <span id='txt'></span>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id='table'>
+		<table>
+			<tr>
+				<td class='left'><span>姓&nbsp&nbsp名:</span></td>
+				<td class='right'>
+					<input name='name' type='text' />
+				</td>
+				<td class='left'><span>电&nbsp&nbsp话:</span></td>
+				<td class='right'>
+					<input name='phone' type='text' />
+
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在部门:</span></td>
+				<td class='right'>
+					<select name='dname' id='dept' onchange="showSub(this.value)">
+							<option value='none'>请选择部门</option>
+						<volist name="d" id="dept">
+							<option value='{$dept.deptno}'>{$dept.dname}</option>
+						</volist>
+					</select>
+
+				</td>
+				<td class='left'><span>所在位置:</span></td>
+				<td class='right'>
+					<input name='room' type='text' />
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>所在处室:</span></td>
+				<td class='right' >
+					<div id='subd'>
+						
+					</div>
+				</td>
+				<td class='left'><span>问题类型:</span></td>
+				<td class='right'>
+					<select name='ptype' onchange="showPType(this.value)">
+						<option value='none'>请选择问题类型</option>
+						<option value='hwp'>硬件问题</option>
+						<option value='sfp'>软件问题</option>
+						<option value='pp'>资产分配</option>
+						<option value='cp'>会议支持</option>
+
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class='left'><span>请求编号:</span></td>
+				<td class='right'>
+					{$applynum}
+					<input type='hidden' name='applynum' value='{$applynum}' />
+				</td>
+				
+				
+				<td class='left'><span>创建人:</span></td>
+				<td class='right'>
+					{$Think.session.name}
+					<input type='hidden' name='creator' value='{$Think.session.name}' />
+				</td>
+			</tr>
+			<tr>
+				
+				<td class='left'><span>分配给:</span></td>
+				<td class='right'>
+					<select name='distribute'>
+						<option value='none'>请选择分配人员</option>
+						<option value='all'>所有人</option>
+						<volist name='u' id='role'>
+							<option value='{$role.name}'>{$role.name}</option>
+						</volist>
+					</select>
+				</td>
+				<td class='left'><span>任务状态:</span></td>
+				<td class='right'>
+					创建中
+					<input type='hidden' name='status' value='创建中' />
+				</td>
+			</tr>
+
+		</table>
+	</div>
+	<div id='Hint'>
+
+	</div>
+	</form>
+
